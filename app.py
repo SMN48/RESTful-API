@@ -11,7 +11,7 @@ from security import authenticate, identity
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://gyychrssgsxkdg:fba28f9f6bfbbbf054b64ad6a065a4e2d77bebb223681b6a98819dd7ce2853a5@ec2-3-89-0-52.compute-1.amazonaws.com:5432/dbv8kupb7vlmp2', 'sqlite:///data.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'Sean'
 api = Api(app)
