@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
@@ -11,7 +9,8 @@ from security import authenticate, identity
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gyychrssgsxkdg:fba28f9f6bfbbbf054b64ad6a065a4e2d77bebb223681b6a98819dd7ce2853a5@ec2-3-89-0-52.compute-1.amazonaws.com:5432/dbv8kupb7vlmp2'
+app.config[
+    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://gyychrssgsxkdg:fba28f9f6bfbbbf054b64ad6a065a4e2d77bebb223681b6a98819dd7ce2853a5@ec2-3-89-0-52.compute-1.amazonaws.com:5432/dbv8kupb7vlmp2'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'Sean'
 api = Api(app)
@@ -23,6 +22,7 @@ def create_tables():
 
 
 jwt = JWT(app, authenticate, identity)  # /auth
+
 
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
