@@ -13,4 +13,4 @@ Sending a GET request to /items or /stores will return a list of all of the reso
 Sending a GET request to /item/<name> or /store/<name> will return a JSON regarding that resource.
 *Sending a GET request to /item/<name> requires valid JWT authorization.
 
-Sending a PUT request with a JSON containing a price and store_id to /item/<name> will udpate the values for that item, or create the item if it is not found.
+Sending a PUT request with a JSON containing a price and store_id to /item/<name> will update the values for that item, or create the item if it is not found.
